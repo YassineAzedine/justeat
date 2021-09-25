@@ -1,4 +1,8 @@
+
+
 <!DOCTYPE html>
+@extends('layouts.app')
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -110,7 +114,9 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
+      
       <div class="carousel-inner">
+          
         <div class="item active">
           <script
 			src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
@@ -146,15 +152,28 @@
 			google.maps.event.addDomListener(window, 'load', initialize);
 			</script>
 			<div id="googleMap" style="height:450px;"></div>
+            
 			  <div class="container">
+                  
 				<div class="carousel-caption">
 				  <a class="btn btn-lg btn-default" href="#" role="button" style="font-size:2em">Order Online Now &raquo;</a>
 				</div>
+                
 			  </div>
 			</div>
 		  </div>
 		</div><!-- /.carousel -->
 	</div>
+  <form action="{{route('search.restaurants')}}" method="POST">
+    @csrf
+    <button class="search btn btn-primary  " type="submit">
+        <i class="fa fa-search" ></i>
+    </button>
+    <div id="app" class="text-center">
+        <example-component></example-component>
+    </div>
+</form>
+
 
 	<div class="mainTitle">
 	<div class="container">
@@ -162,8 +181,16 @@
 	<p>
 	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
 	</p>
+  
+  
+      
+ 
+       
+ 
 	</div>
+    
 	</div>
+    
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
