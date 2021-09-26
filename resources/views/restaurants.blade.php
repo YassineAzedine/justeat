@@ -164,84 +164,23 @@
 		  </div>
 		</div><!-- /.carousel -->
 	</div>
-  <form action="{{route('search.restaurants')}}" method="POST">
-    @csrf
-
-    <button class="search btn btn-primary  " type="submit">
-        <i class="fa fa-search" ></i>
-    </button>
-    <h3>Distance</h3>
-    <select name="distance" id="distance">
-        <option value=" 1">1 Miles</option>
-        <option value=" 2">2 Miles</option>
-        <option value=" 3">3 Miles</option>
-        <option value=" 4">4 Miles</option>
-        <option value=" 5">5 Miles</option>
-
-    </select>
-    <div id="app" class="text-center">
-        <example-component></example-component>
-    </div>
-</form>
-
-
-	<div class="mainTitle">
-	<div class="container">
-	<h1>Bootstrappage Restaurant</h1>
-	<p>
-	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
-	</p>
-  
-  
-      
  
+
+
        
- 
-	</div>
-    
-	</div>
     
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="themes/assets/images/nepali-momo.png" alt="Generic placeholder image">
-          <h2>Nepalese MOMO</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies</p>
-          <p><a class="btn btn-default" href="#" role="button">&pound; 2.2 Add to cart &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="themes/assets/images/burger.png" alt="Generic placeholder image">
-          <h2>Burger</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
-          <p><a class="btn btn-default" href="#" role="button">&pound;5 Add to cart &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-		  <img class="img-circle" src="themes/assets/images/gorkha-special-chicken.png" alt="Lam Tikka">
-          <h2>Gurkha Chicken</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </p>
-          <p><a class="btn btn-default" href="#" role="button">&pound;4 Add to cart &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-	</div>
+ 
 	
 
 	
 	
-	<div class="introSection">
-		<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="cntr">We are launching complete online food order system for restaurent and takeaway Only at the rate <br>&pound;999 </h1>
-			</div>
-		</div>
-		</div>
-	</div>
+
+  
 	
 	
 	
@@ -257,21 +196,16 @@
       <div class="carousel-inner">
         <div class="item active">
          <div class="row">
+           @foreach ($restaurants as $restaurant)
+               
+          
         <div class="col-lg-4">
           <img src="themes/assets/images/salate.png" alt="Generic placeholder image">
-          <h4>Salates</h4>
-          <p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+          <h4>{{$restaurant->name}}</h4>
+          <p>{{$restaurant->adress}}</p>
+          <p><a class="btn btn-default" href="{{route('restaurant.products',['slug' =>$restaurant->slug])}}" role="button">Add to cart &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="themes/assets/images/burger.png" alt="Generic placeholder image">
-          <h4>Meal</h4>
-          <p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="themes/assets/images/drinks.png" alt="Generic placeholder image">
-          <h4>Drink</h4>
-          <p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+        @endforeach
       </div><!-- /.row -->
 		 
         </div>

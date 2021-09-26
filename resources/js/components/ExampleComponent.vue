@@ -9,12 +9,17 @@
                
                 <div class="card">
                      <h3>Your Adrress</h3>
+                     <input type="hidden" v-model="address.postal_code" name="postal_code">
+                     <input type="hidden" v-model="address.latitude" name="latitude">
+                     <input type="hidden" v-model="address.longitude" name="longitude">
+
                 <vue-google-autocomplete
     id="map"
     ref="address"
     classname="form-control"
     placeholder="Start typing"
     v-on:placechanged="getAddressData"
+    country="GB"
 >
 </vue-google-autocomplete>
                 </div>

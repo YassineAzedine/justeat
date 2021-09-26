@@ -2091,6 +2091,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -38196,12 +38201,76 @@ var render = function() {
           [
             _c("h3", [_vm._v("Your Adrress")]),
             _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.address.postal_code,
+                  expression: "address.postal_code"
+                }
+              ],
+              attrs: { type: "hidden", name: "postal_code" },
+              domProps: { value: _vm.address.postal_code },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.address, "postal_code", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.address.latitude,
+                  expression: "address.latitude"
+                }
+              ],
+              attrs: { type: "hidden", name: "latitude" },
+              domProps: { value: _vm.address.latitude },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.address, "latitude", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.address.longitude,
+                  expression: "address.longitude"
+                }
+              ],
+              attrs: { type: "hidden", name: "longitude" },
+              domProps: { value: _vm.address.longitude },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.address, "longitude", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
             _c("vue-google-autocomplete", {
               ref: "address",
               attrs: {
                 id: "map",
                 classname: "form-control",
-                placeholder: "Start typing"
+                placeholder: "Start typing",
+                country: "GB"
               },
               on: { placechanged: _vm.getAddressData }
             })
