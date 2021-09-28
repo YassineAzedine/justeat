@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BasketController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -28,3 +29,10 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 Auth::routes();
 
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware'=>['web']],function(){
+  
+Route::get('/basket',[BasketController::class, 'index'])->name('basket');
+Route::post('/basket',[BasketController::class, 'store'])->name('basket.store');
+
+
+});

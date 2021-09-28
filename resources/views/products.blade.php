@@ -1,5 +1,6 @@
 
 @extends('layouts.app')
+
 <div id="app">
 <!DOCTYPE html>
 
@@ -12,6 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/themes/assets/ico/favicon.ico">
+
     <title>Bootstrappage.com free templates</title>
 
     <!-- Bootstrap core CSS -->
@@ -97,10 +99,10 @@
                   </ul>
   
                   <li><a href="contact.html">Basket
-                      
+                       
                  
                     <div id="app">
-                        <badge-icone :basket-count="2"></badge-icone>
+                        <badge-icone :basket-count="{{auth::user()->basket->sum('qty') ?? ''}}"></badge-icone>
                    
                    </div>
                 </a>
@@ -116,6 +118,9 @@
 
       </div>
     </div>
+    @section('content')
+    
+    @endsection
 
 
     <!-- Carousel
@@ -222,7 +227,7 @@
           <p>{{$product->description}}</p>
           
           <div id="app">
-            <add-to-cart/>
+            <add-to-cart :product="{{$product}}"/>
        </div>
       
         

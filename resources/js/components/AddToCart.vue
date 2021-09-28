@@ -9,18 +9,28 @@
     export default {
 
         props:{
-            basketCount:{
-                required:true,
+            product:{
+                required: true,
             }
 
         },
+        data(){
+            return{
+                address:''
+            }
+        },
   
         mounted() {
-
+          console.log(this.product)
         },
         methods:{
-            addToCart(){
-                alert('addToCart')
+           async  addToCart(){
+           let response = await axios.post('/basket',{
+                product_id:this.product.id })
+                this.$root.$emit('changeBasketCount',response.data.basket_count)
+
+                 console.log(response.data)
+           
             }
         }
         }
