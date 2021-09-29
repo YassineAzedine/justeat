@@ -120,6 +120,7 @@
            
             </div>
           </div>
+          <div></div>
           <div id="#app">
             <stripe-payment-form/>
           </div>
@@ -128,6 +129,7 @@
         </form>
       </div>
     </div>
+    
   
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; 2017-2020 Company Name</p>
