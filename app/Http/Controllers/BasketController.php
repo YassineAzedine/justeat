@@ -14,6 +14,11 @@ class BasketController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
+    public function index(){
+
+        $baskets =Basket::where('user_id',auth()->user()->id)->with('product')->get();
+      return view('basket',compact('baskets'));
+    }
     public function store(Request $request){
         $currentUser = auth()->user();
         $userID = $currentUser->id;

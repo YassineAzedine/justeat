@@ -98,12 +98,13 @@
                     <li><a href="#">ACCOMPANIMENTS</a></li>
                   </ul>
   
-                  <li><a href="contact.html">Basket
+                  <li><a href="{{route('basket.index')}}">Basket
                        
                  
                     <div id="app">
+                      <a href="">
                         <badge-icone :basket-count="{{auth::user()->basket->sum('qty') ?? ''}}"></badge-icone>
-                   
+                      </a>
                    </div>
                 </a>
                 </li>

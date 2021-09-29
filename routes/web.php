@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\CheckoutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,8 +33,12 @@ Auth::routes();
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware'=>['web']],function(){
   
-Route::get('/basket',[BasketController::class, 'index'])->name('basket');
+Route::get('/basket',[BasketController::class, 'index'])->name('basket.index');
 Route::post('/basket',[BasketController::class, 'store'])->name('basket.store');
+//checkout
+Route::get('/checkout',[CheckoutController::class, 'index'])->name('checkout.index');
+
+
 
 
 });

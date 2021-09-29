@@ -22,6 +22,8 @@ window.Vue = require('vue').default;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('badge-icone', require('./components/BadgeIcone.vue').default);
 Vue.component('add-to-cart', require('./components/AddToCart.vue').default);
+Vue.component('stripe-payment-form', require('./components/StripePaymentForm.vue').default);
+
 
 
 
