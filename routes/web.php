@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,10 @@ Route::get('/basket',[BasketController::class, 'index'])->name('basket.index');
 Route::post('/basket',[BasketController::class, 'store'])->name('basket.store');
 //checkout
 Route::get('/checkout',[CheckoutController::class, 'index'])->name('checkout.index');
+Route::get('/user/setup-intent',[UserController::class, 'getSetupIntent'])->name('checkout.index');
+Route::post('/checkout',[CheckoutController::class, 'store'])->name('checkout.store');
+
+
 
 
 
